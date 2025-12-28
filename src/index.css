@@ -1,0 +1,49 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ROOT WRAPPER */
+.app-root {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND IMAGE */
+.app-bg-image {
+  position: fixed;
+  inset: 0;
+  background-image: url("./assets/bg-img.jpg"); /* DESKTOP BG */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -2;
+}
+
+/* 🔽 MOBILE BG IMAGE (< 750px) */
+@media (max-width: 750px) {
+  .app-bg-image {
+    background-image: url("./assets/sample.avif"); /* MOBILE BG */
+    background-attachment: scroll; /* IMPORTANT for mobile performance */
+  }
+}
+
+/* BLUR OVERLAY */
+.app-bg-blur {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+/* CONTENT ABOVE BG */
+.app-content {
+  position: relative;
+  z-index: 1;
+}
